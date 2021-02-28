@@ -1,0 +1,15 @@
+#bloque1{
+    background-color: lightgrey;
+    text-align: center;
+    width: 100%;
+    min-height: 400px;
+    padding: 30px;
+}
+#goback{
+    width:90%;
+    text-align: right;
+}
+.boot{
+    font-size: 25px;
+}
+
