@@ -26,7 +26,13 @@
         <p>En esta seccion podras incluir nuevos pogramas de TV</p>
         <hr class="my-4">
         <div class="form-group col" id="block-addshow">
-
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
                 <form action="/submitshow" method="POST">
                     {% csrf_token %}
                     <p>Títle: <input type="text" name="title"></p>

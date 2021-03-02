@@ -27,6 +27,13 @@
         <hr class="my-4">
         <div class="form-group col" id="block-addshow">
 
+            {% if messages %}
+                <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
                 <form action="/submitedit/{{ show.id }}" method="POST">
                     {% csrf_token %}
                     <p>Títle: <input type="text" name="title" value="{{ show.title }}" id="title" ></p>
